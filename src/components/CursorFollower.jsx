@@ -55,7 +55,7 @@ const CursorFollower = () => {
     <>
       {/* Inner Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-blue-500 rounded-full pointer-events-none z-[9999] mix-blend-screen"
+        className="fixed top-0 left-0 w-2 h-2 bg-green-500 rounded-full pointer-events-none z-[9999] mix-blend-screen"
         style={{
           x: cursorX,
           y: cursorY,
@@ -65,7 +65,7 @@ const CursorFollower = () => {
       />
       {/* Outer Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border-[1.5px] border-blue-400/50 rounded-full pointer-events-none z-[9999] mix-blend-screen"
+        className="fixed top-0 left-0 w-8 h-8 border-[1.5px] border-green-400/50 rounded-full pointer-events-none z-[9999] mix-blend-screen"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,

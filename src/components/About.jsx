@@ -8,7 +8,7 @@ const About = () => {
   
   return (
     <SectionWrapper id="about" className="py-32 md:py-48 text-center relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-900/10 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.h2 
@@ -29,14 +29,14 @@ const About = () => {
           className="mt-16 flex justify-center"
         >
           <div className="glass-card flex flex-col md:flex-row items-center gap-6 px-8 py-6 rounded-2xl max-w-2xl w-full text-left">
-            <div className="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 border border-blue-500/30">
-              <GraduationCap className="text-blue-400" size={32} />
+            <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 border border-green-500/30">
+              <GraduationCap className="text-green-400" size={32} />
             </div>
             <div className="flex-1 text-center md:text-left">
               <h3 className="text-xl font-bold text-white mb-1">Undergraduate Studies</h3>
               <p className="text-gray-300 font-medium text-sm mb-1">{education.university}</p>
               <p className="text-gray-400 text-sm mb-3">{education.degree} • {education.year}</p>
-              <div className="inline-block bg-white/10 px-3 py-1 rounded-md text-sm font-semibold text-blue-300 border border-white/5">
+              <div className="inline-block bg-white/10 px-3 py-1 rounded-md text-sm font-semibold text-green-300 border border-white/5">
                 Current GPA: {education.gpa}
               </div>
             </div>
@@ -56,7 +56,7 @@ const About = () => {
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-2 px-8 py-3 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             <span className="relative z-10">Connect on LinkedIn</span>
           </a>
         </motion.div>

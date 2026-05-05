@@ -1,21 +1,27 @@
 import { motion } from "framer-motion";
 import { PORTFOLIO_DATA } from "../constants";
+import ArcReactor from "./ArcReactor";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Gradients */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[120px] opacity-50 mix-blend-screen pointer-events-none animate-blob" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none translate-x-[20%] animate-blob animation-delay-2000" />
+      {/* Background Gradients and Shapes */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-600/20 rounded-full blur-[120px] opacity-50 mix-blend-screen pointer-events-none animate-blob" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-600/10 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none translate-x-[20%] animate-blob animation-delay-2000" />
+      
+      {/* Arc Reactor Core */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+        <ArcReactor />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium backdrop-blur-md"
+          className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-sm font-medium backdrop-blur-md"
         >
-          <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
           {PORTFOLIO_DATA.personal.role}
         </motion.div>
 
@@ -51,7 +57,7 @@ const Hero = () => {
             className="group neon-border px-8 py-4 bg-white text-black font-semibold rounded-full w-full sm:w-auto text-center"
           >
             <span className="relative z-10">Download Resume</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 opacity-0 group-hover:opacity-100 transition-opacity z-0" />
+            <div className="absolute inset-0 bg-gradient-to-r from-green-100 to-green-100 opacity-0 group-hover:opacity-100 transition-opacity z-0" />
           </a>
           <a
             href="#work"

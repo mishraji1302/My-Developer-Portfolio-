@@ -6,40 +6,30 @@ import { PORTFOLIO_DATA } from "../constants";
 const skillConfig = {
   "Java": { slug: "java", url: "https://www.java.com/" },
   "Python": { slug: "python", url: "https://www.python.org/" },
-  "PHP": { slug: "php", url: "https://www.php.net/" },
   "JavaScript": { slug: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-  "SQL": { slug: "mysql", url: "https://en.wikipedia.org/wiki/SQL" },
-  "HTML/CSS": { slug: "html5", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  "Spring Boot": { slug: "springboot", url: "https://spring.io/projects/spring-boot" },
-  "Django": { slug: "django", url: "https://www.djangoproject.com/" },
-  "Flask": { slug: "flask", url: "https://flask.palletsprojects.com/" },
-  "React": { slug: "react", url: "https://react.dev/" },
-  "Tailwind CSS": { slug: "tailwindcss", url: "https://tailwindcss.com/" },
-  "Framer Motion": { slug: "framer", url: "https://www.framer.com/motion/" },
-  "Vite": { slug: "vite", url: "https://vitejs.dev/" },
-  "MySQL": { slug: "mysql", url: "https://www.mysql.com/" },
+  "C": { slug: "c", url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
+  "React.js": { slug: "react", url: "https://react.dev/" },
+  "Node.js": { slug: "nodedotjs", url: "https://nodejs.org/" },
+  "Angular.js": { slug: "angular", url: "https://angular.io/" },
+  "HTML": { slug: "html5", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  "CSS": { slug: "css3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  "REST API": { slug: null, url: "#" },
   "PostgreSQL": { slug: "postgresql", url: "https://www.postgresql.org/" },
+  "MySQL": { slug: "mysql", url: "https://www.mysql.com/" },
   "MongoDB": { slug: "mongodb", url: "https://www.mongodb.com/" },
-  "TensorFlow": { slug: "tensorflow", url: "https://www.tensorflow.org/" },
-  "PyTorch": { slug: "pytorch", url: "https://pytorch.org/" },
-  "Scikit-Learn": { slug: "scikitlearn", url: "https://scikit-learn.org/" },
-  "Pandas": { slug: "pandas", url: "https://pandas.pydata.org/" },
   "Git": { slug: "git", url: "https://git-scm.com/" },
-  "Postman": { slug: "postman", url: "https://www.postman.com/" },
   "Docker": { slug: "docker", url: "https://www.docker.com/" },
-  "Linux": { slug: "linux", url: "https://www.kernel.org/" },
+  "FastAPI": { slug: "fastapi", url: "https://fastapi.tiangolo.com/" },
+  "Flask": { slug: "flask", url: "https://flask.palletsprojects.com/" },
+  "VS Code": { slug: "visualstudiocode", url: "https://code.visualstudio.com/" },
 };
 
 const SkillBadge = ({ skill }) => {
   const config = skillConfig[skill] || { slug: null, url: "#" };
+  const hasUrl = config.url && config.url !== "#";
 
-  return (
-    <a
-      href={config.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-200 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/20 transition-all group"
-    >
+  const Content = () => (
+    <>
       {config.slug ? (
         <img 
           src={`https://cdn.simpleicons.org/${config.slug}/white`} 
@@ -50,7 +40,28 @@ const SkillBadge = ({ skill }) => {
         <Code2 size={16} className="opacity-70 group-hover:opacity-100 transition-opacity" />
       )}
       {skill}
-    </a>
+    </>
+  );
+
+  const baseClasses = "flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-200 bg-white/5 border border-white/10 rounded-xl transition-all group";
+
+  if (hasUrl) {
+    return (
+      <a
+        href={config.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${baseClasses} hover:bg-white/10 hover:border-white/20`}
+      >
+        <Content />
+      </a>
+    );
+  }
+
+  return (
+    <div className={`${baseClasses} cursor-default`}>
+      <Content />
+    </div>
   );
 };
 
@@ -74,7 +85,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, width: 80 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" 
+          className="h-1 bg-gradient-to-r from-green-500 to-green-500 rounded-full" 
         />
       </div>
 
@@ -85,17 +96,17 @@ const Skills = () => {
         transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
         className="grid grid-cols-1 md:grid-cols-3 gap-6"
       >
-        {/* Languages - span 2 cols on md */}
+        {/* Languages - span 1 col on md */}
         <motion.div 
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="glass-card p-8 md:col-span-2 group"
+          className="glass-card p-8 group"
         >
           <div className="flex items-center gap-3 mb-6">
-            <Terminal className="text-blue-400" size={24} />
-            <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Languages</h3>
+            <Terminal className="text-green-400" size={24} />
+            <h3 className="text-xl font-semibold text-white group-hover:text-green-400 transition-colors">Languages</h3>
           </div>
           <div className="flex flex-wrap gap-3">
             {skills.languages.map((skill) => (
@@ -104,26 +115,7 @@ const Skills = () => {
           </div>
         </motion.div>
 
-        {/* Database */}
-        <motion.div 
-          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="glass-card p-8 group"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <Database className="text-purple-400" size={24} />
-            <h3 className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">Database</h3>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {skills.database.map((skill) => (
-              <SkillBadge key={skill} skill={skill} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Backend - span 2 cols on md */}
+        {/* Web - span 2 cols on md */}
         <motion.div 
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           initial="hidden"
@@ -131,19 +123,19 @@ const Skills = () => {
           viewport={{ once: true }}
           className="glass-card p-8 md:col-span-2 group relative overflow-hidden"
         >
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full group-hover:bg-blue-500/20 transition-colors duration-500 pointer-events-none" />
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-indigo-500/10 blur-[80px] rounded-full group-hover:bg-indigo-500/20 transition-colors duration-500 pointer-events-none" />
           <div className="flex items-center gap-3 mb-6 relative z-10">
-            <Server className="text-blue-400" size={24} />
-            <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Backend Architecture</h3>
+            <Code2 className="text-indigo-400" size={24} />
+            <h3 className="text-xl font-semibold text-white group-hover:text-indigo-400 transition-colors">Web Technologies</h3>
           </div>
           <div className="flex flex-wrap gap-3 relative z-10">
-            {skills.backend.map((skill) => (
+            {skills.web.map((skill) => (
               <SkillBadge key={skill} skill={skill} />
             ))}
           </div>
         </motion.div>
 
-        {/* Frontend - span 1 col */}
+        {/* Databases */}
         <motion.div 
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           initial="hidden"
@@ -152,36 +144,17 @@ const Skills = () => {
           className="glass-card p-8 group"
         >
           <div className="flex items-center gap-3 mb-6">
-            <Code2 className="text-indigo-400" size={24} />
-            <h3 className="text-xl font-semibold text-white group-hover:text-indigo-400 transition-colors">Frontend</h3>
+            <Database className="text-green-400" size={24} />
+            <h3 className="text-xl font-semibold text-white group-hover:text-green-400 transition-colors">Databases</h3>
           </div>
           <div className="flex flex-wrap gap-3">
-            {skills.frontend.map((skill) => (
+            {skills.databases.map((skill) => (
               <SkillBadge key={skill} skill={skill} />
             ))}
           </div>
         </motion.div>
 
-        {/* AI & Machine Learning - span 2 cols */}
-        <motion.div 
-          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="glass-card p-8 md:col-span-2 group"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <BrainCircuit className="text-pink-400" size={24} />
-            <h3 className="text-xl font-semibold text-white group-hover:text-pink-400 transition-colors">AI & Machine Learning</h3>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {skills.machineLearning.map((skill) => (
-              <SkillBadge key={skill} skill={skill} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Tools - span 1 col */}
+        {/* Tools */}
         <motion.div 
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           initial="hidden"
@@ -191,10 +164,67 @@ const Skills = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <Settings className="text-gray-300" size={24} />
-            <h3 className="text-xl font-semibold text-white group-hover:text-gray-300 transition-colors">Dev Tools</h3>
+            <h3 className="text-xl font-semibold text-white group-hover:text-gray-300 transition-colors">Tools</h3>
           </div>
           <div className="flex flex-wrap gap-3">
             {skills.tools.map((skill) => (
+              <SkillBadge key={skill} skill={skill} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Core Concepts */}
+        <motion.div 
+          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="glass-card p-8 group"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <BrainCircuit className="text-green-400" size={24} />
+            <h3 className="text-xl font-semibold text-white group-hover:text-green-400 transition-colors">Core Concepts</h3>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {skills.coreConcepts.map((skill) => (
+              <SkillBadge key={skill} skill={skill} />
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* Learning */}
+        <motion.div 
+          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="glass-card p-8 group"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <Terminal className="text-green-400" size={24} />
+            <h3 className="text-xl font-semibold text-white group-hover:text-green-400 transition-colors">Learning</h3>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {skills.learning.map((skill) => (
+              <SkillBadge key={skill} skill={skill} />
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* Soft Skills - span 2 cols on md */}
+        <motion.div 
+          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="glass-card p-8 md:col-span-2 group"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <Server className="text-orange-400" size={24} />
+            <h3 className="text-xl font-semibold text-white group-hover:text-orange-400 transition-colors">Soft Skills</h3>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {skills.softSkills.map((skill) => (
               <SkillBadge key={skill} skill={skill} />
             ))}
           </div>

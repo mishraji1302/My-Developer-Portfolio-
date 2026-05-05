@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
             <BrandLogo className="w-9 h-9 group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+            <span className="text-xl font-bold tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-green-400 transition-all duration-300">
               Arnav Mishra
             </span>
           </a>
@@ -66,8 +66,8 @@ const Navbar = () => {
             href={PORTFOLIO_DATA.contact.email}
             className="hidden md:inline-flex relative items-center justify-center px-6 py-2.5 text-sm font-medium text-white group"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-70 group-hover:opacity-100 blur-md transition-opacity duration-300" />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-600 rounded-full opacity-70 group-hover:opacity-100 blur-md transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-500 rounded-full" />
             <span className="relative z-10">Let's Talk</span>
           </a>
         </div>

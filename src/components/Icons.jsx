@@ -36,24 +36,67 @@ export const LinkedinIcon = ({ size = 24, className = "" }) => (
 
 export const BrandLogo = ({ className = "w-8 h-8" }) => (
   <svg 
-    viewBox="0 0 40 40" 
+    viewBox="0 0 100 100" 
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
     <defs>
-      <linearGradient id="brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#3b82f6" />
-        <stop offset="100%" stopColor="#8b5cf6" />
+      <linearGradient id="blade-light" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#ecfccb" />
+        <stop offset="100%" stopColor="#d9f99d" />
       </linearGradient>
+      <linearGradient id="blade-med" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#d9f99d" />
+        <stop offset="100%" stopColor="#bef264" />
+      </linearGradient>
+      <linearGradient id="blade-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#bef264" />
+        <stop offset="100%" stopColor="#a3e635" />
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
     </defs>
     
-    <rect x="2" y="2" width="36" height="36" rx="10" stroke="url(#brand-grad)" strokeWidth="2" fill="url(#brand-grad)" fillOpacity="0.1" />
+    {/* 4 Spinning Blade Clusters */}
+    {[0, 90, 180, 270].map((angle, i) => (
+      <g key={i} transform={`rotate(${angle}, 50, 50)`}>
+        {/* Curved Cyan Swoosh */}
+        <path 
+          d="M 50,15 A 35,35 0 0,1 85,50" 
+          fill="none" 
+          stroke="#06b6d4" 
+          strokeWidth="2.5" 
+          strokeLinecap="round"
+          filter="url(#glow)"
+        />
+        {/* 3 Blade Segments */}
+        <path d="M 52,10 L 68,0 L 78,15 L 60,25 Z" fill="url(#blade-light)" />
+        <path d="M 68,-2 L 85,-10 L 92,8 L 75,18 Z" fill="url(#blade-med)" opacity="0.8" />
+        <path d="M 85,-12 L 100,-18 L 105,2 L 88,10 Z" fill="url(#blade-dark)" opacity="0.6" />
+      </g>
+    ))}
     
-    <path 
-      d="M20 10 L12 28 L16 28 L20 18 L24 28 L28 28 Z" 
-      fill="url(#brand-grad)" 
-    />
-    <circle cx="20" cy="24" r="2.5" fill="#ffffff" />
+    {/* Center Core Circle (Subtle) */}
+    <circle cx="50" cy="50" r="22" fill="#022c22" opacity="0.8" />
+    <circle cx="50" cy="50" r="22" fill="none" stroke="#06b6d4" strokeWidth="1" opacity="0.5" />
+    
+    {/* Center 'A' */}
+    <text 
+      x="50" 
+      y="64" 
+      fontSize="40" 
+      fontWeight="900" 
+      fill="#ecfccb" 
+      textAnchor="middle" 
+      fontFamily="system-ui, sans-serif"
+    >
+      A
+    </text>
   </svg>
 );
