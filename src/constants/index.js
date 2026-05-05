@@ -103,8 +103,8 @@ export const PORTFOLIO_DATA = {
   },
   contact: {
     email: "mailto:arnav852mishra@gmail.com",
-    github: "https://github.com/",
-    linkedin: "https://linkedin.com/in/",
+    github: "https://github.com/mishraji1302",
+    linkedin: "https://www.linkedin.com/in/arnav-mishra-2a197a267",
     resume: "/resume.pdf",
   }
 };
