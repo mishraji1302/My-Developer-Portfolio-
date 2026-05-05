@@ -105,6 +105,6 @@ export const PORTFOLIO_DATA = {
     email: "mailto:arnav852mishra@gmail.com",
     github: "https://github.com/",
     linkedin: "https://linkedin.com/in/",
-    resume: "/resume.pages",
+    resume: "/resume.pdf",
   }
 };
