@@ -1,31 +1,31 @@
 # 👨‍💻 My Developer Portfolio
 
-Welcome to my personal developer portfolio! This project showcases my skills, experience, and the projects I've built. 
+# 🌐 Personal Portfolio – Vibe Coded
 
-## 🌐 Live Website
-**View the live site here:** [🔗 Replace this text with your Vercel Link (e.g., https://your-portfolio.vercel.app)]()
+A modern developer portfolio built with a **vibe-first approach**, focusing on clean design, smooth user experience, and minimalism.
+
+---
+
+## ✨ Highlights
+
+* Clean and responsive UI
+* Fast performance
+* Intuitive layout and navigation
+* Built with a focus on aesthetics and flow
+
+---
 
 ## 🛠️ Tech Stack
-- **Framework:** React + Vite
-- **Styling:** Tailwind CSS + Custom CSS
-- **Deployment:** Vercel
 
-## 🚀 Running Locally
+* HTML, CSS, JavaScript
+* React.js
+* Tailwind CSS
+* Vercel (Deployment)
 
-To run this project on your local machine:
+---
 
-1. Clone the repository:
-   ```bash
-   git clone <your-github-repo-url>
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+## 💭 Note
 
-## 📄 License
+This project emphasizes **design and user experience**, with scope for adding deeper technical project showcases in future iterations.
+
 This project is open-source and available under the [MIT License](LICENSE).
