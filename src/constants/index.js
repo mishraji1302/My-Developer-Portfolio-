@@ -1,8 +1,8 @@
 export const PORTFOLIO_DATA = {
   personal: {
     name: "Arnav Mishra",
-    role: "Computer Science Student",
-    tagline: "Passionate Computer Science undergraduate with hands-on experience in full-stack development, backend engineering, REST API design, and agile software delivery. Actively seeking onsite internship opportunities.",
+    role: "AI & ML Engineer",
+    tagline: "Final-year Computer Science student specializing in Artificial Intelligence and Machine Learning. Passionate about building state-of-the-art predictive models, deep learning architectures, and deploying end-to-end intelligent systems. Actively seeking onsite internship opportunities.",
   },
   education: {
     university: "Bharati Vidyapeeth College of Engineering, Pune",
@@ -41,36 +41,7 @@ export const PORTFOLIO_DATA = {
       github: "#",
       live: "",
     },
-    {
-      id: "chat-application",
-      title: "Java Multi-User Chat Application",
-      description: "A highly concurrent, multithreaded client-server chat application architected using Java TCP sockets. Features robust session management, thread-safe message queuing, and real-time broadcasting capable of handling multiple users simultaneously.",
-      extendedDescription: "Architected a multithreaded client-server system using Java TCP sockets, enabling concurrent multi-user sessions with real-time broadcasting and stable performance under load — demonstrating core computer network fundamentals.",
-      features: [
-        "Concurrent multi-user sessions with real-time broadcasting.",
-        "Thread-safe message queuing.",
-        "Session lifecycle management.",
-        "Zero data loss and graceful handling of client disconnections."
-      ],
-      tech: ["Java", "TCP Sockets", "Multithreading"],
-      github: "#",
-      live: "",
-    },
-    {
-      id: "subtitle-ai",
-      title: "Subtitle AI – Auto-Captioning for Reels",
-      description: "A native Android application that automates subtitle generation for short-form video content. Leverages AI/ML models for accurate transcription and FFmpeg to seamlessly burn captions directly into the final video file.",
-      extendedDescription: "Developed natively in Android Studio as a passion project to help automate subtitle generation for my mother's social media reels. The app processes videos, generates accurate captions, and burns them directly into the video file, providing an end-to-end solution for content creators.",
-      features: [
-        "Automated subtitle generation for short-form video content.",
-        "Native Android application built with Android Studio.",
-        "Direct video processing and subtitle burning.",
-        "Designed for ease of use for social media content creators."
-      ],
-      tech: ["Android Studio", "Java/Kotlin", "AI/ML", "FFmpeg"],
-      github: "#",
-      live: "",
-    },
+
   ],
   certifications: [
     {
